@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/DemoEcommers/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MenStyle - Tienda de Moda Masculina</title>
+    <script>
+      // GitHub Pages redirige a 404.html cuando no encuentra una ruta
+      // Este script redirige al index.html para que React Router maneje la ruta
+      // IMPORTANTE: Actualiza '/DemoEcommers' con el nombre de tu repositorio
+      var repoName = '/DemoEcommers';
+      var path = window.location.pathname;
+      
+      // Si no estamos en index.html, redirigir manteniendo query params y hash
+      if (!path.endsWith('/index.html')) {
+        var redirectPath = repoName + '/index.html';
+        if (window.location.search) redirectPath += window.location.search;
+        if (window.location.hash) redirectPath += window.location.hash;
+        window.location.replace(redirectPath);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/DemoEcommers/src/main.jsx"></script>
+  </body>
+</html>
+
