@@ -1,0 +1,38 @@
+====================================
+COMANDOS PARA SUBIR A GITHUB
+====================================
+
+Abre PowerShell en esta carpeta y ejecuta estos comandos UNO POR UNO:
+
+1. Verificar que estás en la carpeta correcta:
+   cd "C:\Users\maxim\OneDrive\Escritorio\Nueva carpeta\Trabajo\DemoEcommers\Codigo"
+
+2. Inicializar Git (si no está inicializado):
+   git init
+
+3. Conectar con tu repositorio de GitHub:
+   git remote add origin https://github.com/MaximoGamba/DemoEcommers.git
+   
+   (Si ya existe, usa: git remote set-url origin https://github.com/MaximoGamba/DemoEcommers.git)
+
+4. Agregar todos los archivos (respeta .gitignore):
+   git add .
+
+5. Hacer commit:
+   git commit -m "Initial commit - Proyecto completo"
+
+6. Cambiar a rama main:
+   git branch -M main
+
+7. Subir a GitHub:
+   git push -u origin main
+
+====================================
+NOTAS:
+- Si te pide usuario/contraseña, usa un Personal Access Token
+- Para crear token: GitHub → Settings → Developer settings → Personal access tokens → Generate new token
+- El token necesita permisos: repo (todos)
+
+====================================
+
+

@@ -1,0 +1,542 @@
+/* ===================================
+   MERCADO PAGO SIMULATOR STYLES
+   =================================== */
+
+.mp-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.mp-modal {
+  background: #fff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header */
+.mp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e8e8e8;
+  background: linear-gradient(135deg, #00b1ea 0%, #009ee3 100%);
+}
+
+.mp-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mp-logo-icon {
+  font-size: 1.5rem;
+}
+
+.mp-logo-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+.mp-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.mp-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Content */
+.mp-content {
+  padding: 1.5rem;
+}
+
+/* Amount Display */
+.mp-amount {
+  text-align: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.mp-amount-label {
+  display: block;
+  color: #666;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.mp-amount-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* Steps */
+.mp-step {
+  animation: fadeIn 0.3s ease;
+}
+
+.mp-step h3 {
+  font-size: 1.125rem;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+/* Payment Methods */
+.mp-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mp-method {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  width: 100%;
+}
+
+.mp-method:hover {
+  border-color: #009ee3;
+  background: #f0f9ff;
+}
+
+.mp-method-icon {
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+.mp-method-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.mp-method-name {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.mp-method-detail {
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 0.15rem;
+}
+
+.mp-method-arrow {
+  color: #999;
+  font-size: 1.25rem;
+}
+
+/* Back Button */
+.mp-back {
+  background: none;
+  border: none;
+  color: #009ee3;
+  font-size: 0.875rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+.mp-back:hover {
+  text-decoration: underline;
+}
+
+/* Demo Cards */
+.mp-demo-cards {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.mp-demo-label {
+  font-size: 0.75rem;
+  color: #856404;
+}
+
+.mp-demo-card-btn {
+  padding: 0.35rem 0.75rem;
+  background: #ffc107;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #856404;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mp-demo-card-btn:hover {
+  background: #e0a800;
+}
+
+/* Card Preview */
+.mp-card-preview {
+  padding: 1.25rem;
+  border-radius: 12px;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.mp-card-preview::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.mp-card-brand {
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: right;
+  margin-bottom: 1.5rem;
+}
+
+.mp-card-number {
+  font-size: 1.25rem;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.mp-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+/* Form */
+.mp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mp-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.mp-field label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mp-field input,
+.mp-field select {
+  padding: 0.875rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.mp-field input:focus,
+.mp-field select:focus {
+  outline: none;
+  border-color: #009ee3;
+  box-shadow: 0 0 0 3px rgba(0, 158, 227, 0.15);
+}
+
+.mp-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Pay Button */
+.mp-pay-btn {
+  padding: 1rem;
+  background: linear-gradient(135deg, #009ee3 0%, #00b1ea 100%);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 0.5rem;
+}
+
+.mp-pay-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 158, 227, 0.35);
+}
+
+/* Error */
+.mp-error {
+  padding: 0.75rem;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  color: #dc2626;
+  font-size: 0.875rem;
+}
+
+/* Processing */
+.mp-processing {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.mp-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid #e8e8e8;
+  border-top-color: #009ee3;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1.5rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.mp-processing h3 {
+  margin-bottom: 0.5rem;
+}
+
+.mp-processing p {
+  color: #666;
+  font-size: 0.875rem;
+}
+
+.mp-security {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  background: #f0f9ff;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: #009ee3;
+}
+
+/* Success */
+.mp-success {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.mp-success-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00a650 0%, #00c853 100%);
+  color: #fff;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  animation: successPop 0.5s ease;
+  box-shadow: 0 10px 40px rgba(0, 166, 80, 0.3);
+}
+
+@keyframes successPop {
+  0% { transform: scale(0); opacity: 0; }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.mp-success h3 {
+  color: #00a650;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.mp-success p {
+  color: #666;
+}
+
+.mp-success-amount {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 1rem 0;
+}
+
+.mp-redirect {
+  margin-top: 1.5rem;
+  color: #999;
+  font-size: 0.875rem;
+}
+
+/* Error State */
+.mp-error-state {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.mp-error-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+  color: #fff;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.mp-error-state h3 {
+  color: #dc2626;
+  margin-bottom: 0.5rem;
+}
+
+.mp-error-state p {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.mp-retry-btn {
+  padding: 0.875rem 2rem;
+  background: #f3f4f6;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  color: #1a1a1a;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mp-retry-btn:hover {
+  background: #e5e7eb;
+}
+
+/* Footer */
+.mp-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #e8e8e8;
+  background: #f8f9fa;
+  border-radius: 0 0 16px 16px;
+}
+
+.mp-secure {
+  font-size: 0.75rem;
+  color: #00a650;
+  font-weight: 500;
+}
+
+.mp-powered {
+  font-size: 0.7rem;
+  color: #999;
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+  .mp-modal {
+    margin: 1rem;
+    max-height: calc(100vh - 2rem);
+  }
+
+  .mp-amount-value {
+    font-size: 1.5rem;
+  }
+
+  .mp-card-number {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
