@@ -100,3 +100,4 @@ Agregar métricas profesionales similares a TiendaNube/Shopify para dar valor al
 - Colores: verde para positivo, rojo para negativo
 - Gráficos interactivos
 - Responsive design
+

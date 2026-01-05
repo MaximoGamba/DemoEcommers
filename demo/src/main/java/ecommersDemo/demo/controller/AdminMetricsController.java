@@ -93,3 +93,4 @@ public class AdminMetricsController {
         return ResponseEntity.ok(ApiResponse.success(resumen));
     }
 }
+
