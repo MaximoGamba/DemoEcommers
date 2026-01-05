@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import ProtectedRoute from './components/ProtectedRoute';
 
 // Pages
 import HomePage from './pages/HomePage';
@@ -42,9 +43,32 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/registro" element={<RegisterPage />} />
             <Route path="/perfil" element={<ProfilePage />} />
-            <Route path="/admin" element={<AdminDashboardPage />} />
-            <Route path="/admin/productos" element={<AdminProductsPage />} />
-            <Route path="/admin/pedidos" element={<AdminOrdersPage />} />
+            
+            {/* Rutas protegidas - Solo para administradores */}
+            <Route 
+              path="/admin" 
+              element={
+                <ProtectedRoute requireAdmin={true}>
+                  <AdminDashboardPage />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/admin/productos" 
+              element={
+                <ProtectedRoute requireAdmin={true}>
+                  <AdminProductsPage />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/admin/pedidos" 
+              element={
+                <ProtectedRoute requireAdmin={true}>
+                  <AdminOrdersPage />
+                </ProtectedRoute>
+              } 
+            />
           </Routes>
         </main>
       </div>

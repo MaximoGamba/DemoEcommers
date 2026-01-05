@@ -127,7 +127,7 @@ function ProductDetailPage() {
         'MEDIUM': 'M',
         'LARGE': 'L',
         'EXTRA LARGE': 'XL',
-        'EXTRA LARGE': 'XL'
+        'XXL': 'XXL'
       };
       return talleMap[talleUpper] || talleNombre;
     }

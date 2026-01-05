@@ -1,15 +1,26 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import adminService from '../services/adminService';
+import MetricsCards from '../components/MetricsCards';
+import { useAuth } from '../context/AuthContext';
 import './AdminPage.css';
 
 function AdminDashboardPage() {
+  const { isAdmin, isAuthenticated } = useAuth();
+  const navigate = useNavigate();
   const [stats, setStats] = useState({
     products: { total: 0, active: 0, outOfStock: 0, featured: 0 },
     orders: {},
   });
   const [recentOrders, setRecentOrders] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  // Verificar que el usuario sea admin
+  useEffect(() => {
+    if (!isAuthenticated || !isAdmin) {
+      navigate('/login');
+    }
+  }, [isAdmin, isAuthenticated, navigate]);
 
   useEffect(() => {
     loadDashboard();
@@ -113,6 +124,9 @@ function AdminDashboardPage() {
           </div>
         ) : (
           <>
+            {/* Métricas Avanzadas de Ventas - Solo para Admin */}
+            {isAdmin && <MetricsCards />}
+
             {/* Overview Stats */}
             <div className="dashboard-overview">
               <div className="overview-card products">

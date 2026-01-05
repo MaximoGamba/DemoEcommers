@@ -160,6 +160,64 @@ export const adminService = {
     const response = await apiClient.put(`/admin/pedidos/${id}/cancelar`);
     return response.data.data;
   },
+
+  // ==================== MÉTRICAS AVANZADAS ====================
+
+  /**
+   * Obtiene métricas de ventas por período
+   */
+  getSalesMetrics: async (periodo = 'mes') => {
+    const response = await apiClient.get('/admin/metricas/ventas', {
+      params: { periodo }
+    });
+    return response.data.data;
+  },
+
+  /**
+   * Obtiene datos de ventas en el tiempo para gráficos
+   */
+  getSalesOverTime: async (dias = 30) => {
+    const response = await apiClient.get('/admin/metricas/ventas-tiempo', {
+      params: { dias }
+    });
+    return response.data.data;
+  },
+
+  /**
+   * Obtiene productos más vendidos
+   */
+  getTopProducts: async (limite = 10) => {
+    const response = await apiClient.get('/admin/metricas/productos-mas-vendidos', {
+      params: { limite }
+    });
+    return response.data.data;
+  },
+
+  /**
+   * Obtiene métricas por categoría
+   */
+  getCategoryMetrics: async () => {
+    const response = await apiClient.get('/admin/metricas/categorias');
+    return response.data.data;
+  },
+
+  /**
+   * Obtiene métricas de clientes
+   */
+  getCustomerMetrics: async (periodo = 'mes') => {
+    const response = await apiClient.get('/admin/metricas/clientes', {
+      params: { periodo }
+    });
+    return response.data.data;
+  },
+
+  /**
+   * Obtiene resumen completo de métricas
+   */
+  getMetricsSummary: async () => {
+    const response = await apiClient.get('/admin/metricas/resumen');
+    return response.data.data;
+  },
 };
 
 export default adminService;

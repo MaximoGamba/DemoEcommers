@@ -4,14 +4,12 @@
 services:
   - type: web
     name: demo-ecommerce-backend
-    env: java
-    buildCommand: cd demo && ./mvnw clean package -DskipTests
-    startCommand: cd demo && java -jar target/demo-0.0.1-SNAPSHOT.jar
+    env: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
     envVars:
       - key: JAVA_VERSION
         value: 21
       - key: PORT
         value: 8080
     healthCheckPath: /api/productos
-
-
