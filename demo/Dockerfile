@@ -12,7 +12,7 @@ COPY mvnw .
 # Dar permisos de ejecución a mvnw
 RUN chmod +x ./mvnw
 
-# Descargar dependencias (esto se cachea si pom.xml no cambia)
+# Descargar dependencias
 RUN ./mvnw dependency:go-offline -B || true
 
 # Copiar el código fuente
@@ -21,7 +21,7 @@ COPY src ./src
 # Construir la aplicación
 RUN ./mvnw clean package -DskipTests
 
-# Imagen final más pequeña
+# Imagen final más liviana
 FROM eclipse-temurin:21-jre-alpine
 
 WORKDIR /app
@@ -29,11 +29,8 @@ WORKDIR /app
 # Copiar el JAR construido
 COPY --from=build /app/target/demo-0.0.1-SNAPSHOT.jar app.jar
 
-# Render asigna un puerto dinámico, exponemos el rango común
+# Render asigna el puerto dinámicamente
 EXPOSE 8080
 
-# Comando para iniciar la aplicación
-# Render inyecta PORT automáticamente como variable de entorno
-# Spring Boot leerá PORT desde application.properties (server.port=${PORT:8080})
+# Iniciar la aplicación
 ENTRYPOINT ["sh", "-c", "java -jar app.jar"]
-
